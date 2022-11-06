@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class Commercial extends Employes {
 	int nb_vente, jr_trav;
 	double interet;
-   final int valeur= 60000;
    String titre = "";
    double salaire_com;
 	Scanner entree = new Scanner(System.in); 
