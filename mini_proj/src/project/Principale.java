@@ -7,12 +7,15 @@ public class Principale {
 	   int reponse;
 	   String titre = "";
 	   System.out.println("BIENVENUE DANS NOTRE LOGICIEL DE GESTION DU PERSONNEL");
+	   System.out.println("_____________________________________________________");
 	   System.out.println("CHOISSISSEZ UNE OPTION DANS LE MENU CI-DESSUS");
+	   System.out.println("_____________________________________________________");
 	   System.out.println("_____________________MENU____________________");
 	   System.out.println("   1---------> AFFICHER LES CARACTERISTIQUES UN EMPLOYE ET SON SALAIRE SI VOUS LE VOULEZ");
 	   System.out.println("   2---------> ENREGISTRER ET AFFICHER LES SUBALTERNES D'UN CADRE");
-	   System.out.println("   3--------->  1.1) AFFICHER LESINFORMATIONS D'UN COMMERCIAL -- 1.2) AFFICHER LE SALAIRE REDEFINI");
-	   System.out.println("   2---------> AFFICHER LE SALAIRE DE TOUT LES EMPLOYES");
+	   System.out.println("   3--------->  1.1)  METTRE A JOUR ET AFFICHER LES INFORMATIONS D'UN COMMERCIAL -- 1.2) AFFICHER LE SALAIRE REDEFINI");
+	   System.out.println("   4---------> AFFICHER LE SALAIRE DE TOUT LES EMPLOYES");
+	   System.out.println("_____________________________________________________________________________________________________________________");
 	   System.out.println(" FAITES UN CHOIX: ");
 	   int menu = entree.nextInt(); entree.nextLine();
 	   
@@ -88,26 +91,26 @@ public class Principale {
 					    
 		 else if (menu == 3) {
 				   System.out.println("_____________________SOUS-MENU____________________");
-				   System.out.println("   1---------> AFFICHER LESINFORMATIONS D'UN COMMERCIAL");
+				   System.out.println("   1---------> AFFICHER LES INFORMATIONS D'UN COMMERCIAL");
 				   System.out.println("   2---------> AFFICHER LE SALAIRE REDEFINI");
 			   			 		
 			 		System.out.println("FAITES UN CHOIX:");
 			 		int s_menu = entree.nextInt(); entree.nextLine(); 
 			 		if (s_menu == 1) {
 			 		// AFFICHER LES INFORMATIONS DU COMMERCIAL
-			 			System.out.println("==========ENREGISTREMENT.....");
-						System.out.println("entrez le nom du commercial ");
+			 			System.out.println("==========||ENREGISTREMENT.....");
+						System.out.println("Entrez le nom du commercial ");
 							String le_nom = entree.nextLine(); entree.nextLine(); 
 
-						int l_indice = 3;
+							int l_indice = 3;
 								   	
-						System.out.println("entrez le matricule du commercial");
+						System.out.println("Entrez le matricule du commercial");
 							String le_matricule = entree.nextLine(); entree.nextLine();
 											
-						System.out.println("entrez vos nombre de vente de ce mois");
+						System.out.println("Entrez le nombre de vente de ce mois");
 							int nb_vente = entree.nextInt(); entree.nextLine();
 								   	
-						System.out.println("entrez vos nombre de jour de travail");
+						System.out.println("Entrez le nombre de jour de travail");
 							int jr_trav = entree.nextInt(); entree.nextLine();
 							Commercial com1 = new Commercial(le_nom, l_indice, le_matricule,titre, nb_vente, jr_trav);
 							System.out.println("==========AFFICHAGE DES INFORMATIONS DU COMMERCIAL.....");
@@ -116,24 +119,24 @@ public class Principale {
 			 		}
 
 			 		else if (s_menu == 2) {
-			 			System.out.println("==========ENREGISTREMENT.....");
-						System.out.println("entrez le nom du commercial ");
+			 			System.out.println("==========||ENREGISTREMENT...");
+						System.out.println("Entrez le nom du commercial");
 							String le_nom = entree.nextLine(); entree.nextLine(); 
 
 						int l_indice = 3;
 								   	
-						System.out.println("entrez le matricule du commercial");
+						System.out.println("Entrez le matricule du commercial");
 							String le_matricule = entree.nextLine(); entree.nextLine();
 											
-						System.out.println("entrez vos nombre de vente de ce mois");
+						System.out.println("Entrez le nombre de vos vente de ce mois");
 							int nb_vente = entree.nextInt(); entree.nextLine();
 								   	
-						System.out.println("entrez vos nombre de jour de travail");
+						System.out.println("Entrez le nombre de jour de travail");
 							int jr_trav = entree.nextInt(); entree.nextLine();
 						Commercial com1 = new Commercial(le_nom, l_indice, le_matricule,titre, nb_vente, jr_trav);
-						System.out.println("==========|| REDEFINITION DU SALAIRE.....");		   	
+						System.out.println("==========|| REDEFINITION DU SALAIRE...");		   	
 						com1.calcsalcom(l_indice);
-						System.out.println("_________________________________________");
+						System.out.println("_______________________________________");
 			 		}
 			 		else {
 			 			System.out.println("Choix non pris en compte");
@@ -142,12 +145,12 @@ public class Principale {
 					
 		}
 		 else if (menu == 4) {
-			 System.out.println("entrez le nombre de cadre qu'il y a dans votre entreprise");
+			 System.out.println("Entrez le nombre de cadre qu'il y a dans votre entreprise");
 				int nb_cadre = entree.nextInt(); entree.nextLine();
-			System.out.println("entrez le nombre de commerciaux qu'il y a dans votre entreprise");
+			System.out.println("Entrez le nombre de commercial qu'il y a dans votre entreprise");
 				int nb_com = entree.nextInt(); entree.nextLine();
 								
-			System.out.println("entrez le nombre de subalterne qu'il y a dans votre entreprise");
+			System.out.println("Entrez le nombre de subalterne qu'il y a dans votre entreprise");
 				int nb_subal = entree.nextInt(); entree.nextLine();
 			ToutPersonnels tp1 = new ToutPersonnels(null, 0, null, null);
 			tp1.salaire_tot(nb_cadre, nb_com, nb_subal);
@@ -163,6 +166,9 @@ public class Principale {
 		System.out.println(" Entrez ' 1 ' si vous voulez continuez "
 				+ "et ' 2 '   dans le cas contraire ");
 		reponse = entree.nextInt();
+		if (reponse == 2){
+			System.out.println("MERCI D'AVOIR UTILISE");
+		}
 		
 		}while (reponse== 1);
 
